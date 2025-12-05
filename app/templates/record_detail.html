@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Record Details {% endblock%}
+
+{# Jinja2 comment #}
+
+{% block content %}
+<h1>{{ record.title }}</h1>
+
+{% if record.content %}
+<p>{{ record.content }}</p> <p>Created: <strong>{{ record.timestamp }}</strong></p>
+{% else %}
+<p><em>No Content</em></p>
+{% endif %}
+
+<p><a href="{{ url_for('main.list_records')}}"> --Back to all records </a></p>
+{% endblock %} 
+
+
+

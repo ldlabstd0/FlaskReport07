@@ -1,0 +1,206 @@
+/* 1. Global Reset and Font */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Clean, modern font */
+    background-color: #F8F9FA; /* Very light gray background */
+    color: #333; /* Dark gray text for high contrast */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 2. Main Content Container */
+.container {
+    max-width: 1000px; /* Limits width for readability */
+    margin: 40px auto; /* Centers container, adds space above/below */
+    background-color: #FFFFFF; /* White background for content */
+    border-radius: 12px; /* Soft rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.main-content {
+    padding: 30px;
+}
+
+/* 3. Navigation Bar (Navbar) */
+.navbar {
+    border-bottom: 1px solid #E0E0E0; /* Separator line */
+    padding: 15px 30px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #007BFF; /* Primary accent color (Blue) */
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navbar a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* 4. Headings */
+h1 {
+    font-size: 2em;
+    color: #212529; /* Darker title color */
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007BFF; /* Accent line under main title */
+}
+
+/* 5. Lists (Records) */
+.main-content ul {
+    list-style-type: none; /* Removes default bullets */
+    padding: 0;
+}
+
+.main-content li {
+    border-bottom: 1px dashed #E9ECEF; /* Subtle separator */
+    padding: 10px 0;
+}
+
+.main-content li:last-child {
+    border-bottom: none;
+}
+
+/* 6. Action Links (Edit | Delete) */
+.main-content li a:not(.title-link) { /* Targets Edit/Delete links */
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+/* 7. Button/Link Styles */
+a.button-link, p a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #28A745; /* Green for Create/Save actions */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+a.button-link:hover, p a:hover {
+    background-color: #1E7E34;
+}
+
+/* 7. Action Links and List Item Specifics */
+
+/* Style the main title link */
+.title-link {
+    color: #333; /* Darker color for prominence */
+    font-size: 1.1em;
+    text-decoration: none;
+    margin-right: 15px; /* Separate title from action links */
+}
+
+.title-link:hover {
+    color: #007BFF; /* Primary color on hover */
+}
+
+/* Grouping for action links (Edit | Delete) */
+.actions {
+    font-size: 0.85em;
+    white-space: nowrap; /* Keeps the links on one line */
+}
+
+/* Style for individual Edit/Delete links */
+.action-link {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.action-link.edit {
+    color: #FFC107; /* Yellow for Edit */
+}
+
+.action-link.delete {
+    color: #DC3545; /* Red for Delete */
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+/* Ensure the content is slightly indented or styled differently */
+.record-content {
+    margin: 5px 0 0 0;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Style for the 'Create a New Record' button */
+.button-link {
+    /* Use the styles defined in the previous suggestion */
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #28A745; 
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+    margin-bottom: 20px; /* Space below the button */
+}
+
+.button-link:hover {
+    background-color: #1E7E34;
+}
+
+/* 8. Form Styling (for form.html) */
+
+/* Grouping for each form field */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Style for field labels (Title, Content) */
+.form-label {
+    display: block; /* Ensures label takes up its own line */
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #343A40; /* Darker color */
+}
+
+/* Style for all input and textarea fields */
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #CED4DA; /* Light border */
+    border-radius: 6px;
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    transition: border-color 0.2s, box-shadow 0.2s;
+    font-size: 1em;
+    resize: vertical; /* Allows users to resize the textarea vertically */
+}
+
+.form-control:focus {
+    border-color: #007BFF; /* Primary color when active */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Subtle glow effect */
+    outline: none;
+}
+
+/* Style the submit button (reusing the .button-link style) */
+.submit-group {
+    margin-top: 30px;
+}
+
+.submit-button {
+    cursor: pointer;
+    font-size: 1.1em;
+    /* The .button-link style handles the background color, padding, and hover effect */
+}
+
+/* Style for validation error messages */
+.error-message {
+    color: #DC3545; /* Red error color */
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
