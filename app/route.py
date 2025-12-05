@@ -1,27 +1,21 @@
-# app/route.py (UPDATED with dedicated Home route)
-
 from flask import Blueprint, render_template, redirect, url_for, flash, request
-from app import db # Import the SQLAlchemy object
-from app.model import Record # Import the SQLAlchemy model
-from app.forms import RecordForm # Import the forms we just defined
+from app import db 
+from app.model import Record 
+from app.forms import RecordForm 
 
 # Create the Blueprint instance
 main_bp = Blueprint('main', __name__)
 
-# --- Home Route ---
+
 @main_bp.route('/')
 def index():
     """Renders the Home page, using the endpoint 'main.index'."""
-    # You will need a templates/index.html file for this to work!
     return render_template('index.html')
-
-# --- View Routes ---
 
 @main_bp.route('/records')
 def list_records():
     """List all records using SQLAlchemy ORM (now only on /records)."""
     
-    # ORM Query: SELECT * FROM records ORDER BY timestamp DESC
     records = Record.query.order_by(Record.timestamp.desc()).all()
     
     return render_template('records_list.html', records=records)
@@ -39,7 +33,6 @@ def view_record(id):
     
     return render_template('record_detail.html', record=record)
 
-# --- Create Route ---
 
 @main_bp.route('/records/new', methods=['GET', 'POST'])
 def create_record():
@@ -60,7 +53,6 @@ def create_record():
     
     return render_template('form.html', form=form, action='Create')
 
-# --- Update Route ---
 
 @main_bp.route('/records/<int:id>/edit', methods=['GET', 'POST'])
 def edit_record(id):
@@ -84,7 +76,6 @@ def edit_record(id):
 
     return render_template('form.html', form=form, action='Edit')
 
-# --- Delete Route ---
 
 @main_bp.route('/records/<int:id>/delete', methods=['POST'])
 def delete_record(id):
