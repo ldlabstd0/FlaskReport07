@@ -1,8 +1,6 @@
-# __init__.py (Corrected)
 from flask import Flask 
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-# Import the Config class directly
 from configuration import Config 
 
 db = SQLAlchemy()
